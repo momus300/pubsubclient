@@ -392,7 +392,7 @@ boolean PubSubClient::publish(const char* topic, const uint8_t* payload, unsigne
         }
         uint8_t header = MQTTPUBLISH;
         if (retained) {
-            header |= 1;
+            header |= 3;
         }
         return write(header,buffer,length-MQTT_MAX_HEADER_SIZE);
     }
